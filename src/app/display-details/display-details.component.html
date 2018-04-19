@@ -1,0 +1,4 @@
+<button class="btn btn-primary" (click)="onButtonClick()">Display details</button>
+<p *ngIf="buttonClicked">Button clicked !</p>
+<p *ngFor="let item of items" [ngStyle]="{backgroundColor: getBackGround(item)}"
+[ngClass]="{'white-text': item%5 == 0}">{{item}}</p>
