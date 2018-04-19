@@ -1,21 +1,39 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <div class="container">
+  <div class="row">
+      <div class="col-md-8">
+        <ul class="nav nav-tabs">
+            <li role="presentation"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              <a routerLink="/">Home</a>
+            </li>
+            <li role="presentation"  routerLinkActive="active">
+              <a routerLink="/server">Server</a>
+            </li>
+            <li role="presentation" routerLinkActive="active">
+              <a routerLink="user">User</a>
+            </li>
+            <li role="presentation" routerLinkActive="active">
+              <a [routerLink]="'/details'">Details</a>
+            </li>
+        </ul>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
   <div class="content">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <hr>
-<div app-servers></div>
-<hr>
+
+
+
 <div class="warning-alert"></div>
 <div class="success-alert"></div>
 </div>
-<hr>
-<app-user></app-user>
-<hr>
-<app-display-details></app-display-details>
-<hr>
+
 <game-control (gameStarted)="onGameStarted($event)"></game-control>
 <div class="row">
   <div class="col-md-12">
@@ -24,4 +42,4 @@
   </div>
 </div>
 
-</div>
+</div> -->

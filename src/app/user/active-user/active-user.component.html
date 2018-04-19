@@ -1,0 +1,9 @@
+<h2 class="header">Active Users</h2>
+<div class="row" *ngFor="let user of activeUsers; let id = index">
+
+
+<div class="col-md-3">
+  {{user}} | <a routerLink="." (click)="makeInactive(id)">Make Inactive</a>
+</div>
+
+</div>

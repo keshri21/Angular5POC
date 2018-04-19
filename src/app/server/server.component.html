@@ -1,1 +1,4 @@
-<p>Content from server {{ id }} is runnning</p>
+<p>Content from server with id: {{ server.id }} and name: {{server.name}} is runnning</p>
+<hr>
+<button class="btn btn-primary" (click)="onUpdateServerClick()"        
+        [disabled]="!server.allowEdit">Update Server</button>

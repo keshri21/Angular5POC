@@ -1,10 +1,30 @@
-<div>
-	<h3>Server Name</h3>
-	<!-- <input type="text" name="name" (input)="onServerNameInput($event)" /> -->
-	<input type="text" name="name" [(ngModel)]="serverName" />
-	<!-- <p>{{ serverName }}</p> -->
-	<button class="btn btn-primary" [disabled]="!allowNewServer"
-			(click)="onAddNewServer()">Add New Server</button> <!-- property binding-->
-	<p>{{ serverCreatedMessage }}</p>
-  <server-app></server-app>
+<div class="row">
+
+
+<div class="col-md-4">
+  <ul class="list-group">
+    <li *ngFor="let server of serverList"
+          class="list-group-item"
+          [routerLink]="['.', server.id]"
+          [queryParams]="{allowEdit: server.allowEdit}"
+          routerLinkActive="active">{{server.name}}</li>
+  </ul>
+</div>
+
+<div class="col-md-8">
+  <router-outlet></router-outlet>
+</div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-4">
+    <h3>Server Name</h3>
+  	<!-- <input type="text" name="name" (input)="onServerNameInput($event)" /> -->
+  	<input type="text" name="name" [(ngModel)]="serverName" />
+  	<!-- <p>{{ serverName }}</p> -->
+  	<hr>
+  	<button class="btn btn-primary" [disabled]="!allowNewServer"
+  			(click)="onAddNewServer()">Add New Server</button> <!-- property binding-->
+  	<p>{{ serverCreatedMessage }}</p>
+  </div>
 </div>

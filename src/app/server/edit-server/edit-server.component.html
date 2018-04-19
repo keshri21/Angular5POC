@@ -1,0 +1,9 @@
+<h3>Server Name</h3>
+<!-- <input type="text" name="name" (input)="onServerNameInput($event)" /> -->
+<input type="text" name="name" [(ngModel)]="serverName" />
+<!-- <p>{{ serverName }}</p> -->
+<hr>
+<button class="btn btn-primary"
+    (click)="onEditServer(serverId)">Edit</button> <!-- property binding-->
+<button class="btn btn-danger" [routerLink]="['/server', serverId]"
+      [queryParams]="{allowEdit: allowEdit}">Cancel</button>
