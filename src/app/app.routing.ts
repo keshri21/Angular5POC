@@ -6,11 +6,13 @@ import { ServerComponent } from './server/server.component';
 import { EditServerComponent } from './server/edit-server/edit-server.component';
 import { UserComponent } from './user/user.component';
 import { DisplayDetailsComponent } from './display-details/display-details.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { ServerResolver } from './services/server-resolve.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'server', component: ServersComponent, children: [
-    {path: ':id', component: ServerComponent},
+  {path: 'server', canActivateChild: [ AuthGuardService ], component: ServersComponent, children: [
+    {path: ':id', component: ServerComponent, resolve: {serverData: ServerResolver}},
     {path: ':id/edit', component: EditServerComponent}
   ]},
   {path: 'user', component: UserComponent},

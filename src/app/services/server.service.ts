@@ -17,4 +17,8 @@ lastId = 3;
   getServerName(id: number){
     return this.serverList[id-1].name;
   }
+
+  getServer(id: number){
+    return this.serverList[id-1];
+  }
 }

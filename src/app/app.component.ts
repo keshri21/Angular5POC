@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
 import { UserService } from './services/user.service';
-import { ServerService } from './services/server.service';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'my-app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ UserService, ServerService ]
+  providers: [ UserService]
 })
 export class AppComponent {
   title = 'My First Angular App';

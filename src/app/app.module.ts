@@ -18,8 +18,10 @@ import { InactiveUserComponent } from './user/inactive-user/inactive-user.compon
 import { HomeComponent } from './home/home.component';
 
 import { EditServerComponent } from './server/edit-server/edit-server.component';
-
-
+import { AuthGuardService } from './services/auth-guard.service';
+import { LoginService } from './services/login.service';
+import { ServerResolver } from './services/server-resolve.service';
+import { ServerService } from './services/server.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { EditServerComponent } from './server/edit-server/edit-server.component'
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ AuthGuardService, LoginService, ServerResolver, ServerService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

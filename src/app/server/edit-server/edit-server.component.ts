@@ -19,7 +19,7 @@ allowEdit: boolean = false;
     this.serverId = this.route.snapshot.params['id'];
     this.serverName = this.serverService.getServerName(this.serverId);
     this.route.queryParams.subscribe(
-      (queryParams : Params) => this.allowEdit = queryParams['allowEdit'] == 'true' ? true : false;
+      (queryParams : Params) => this.allowEdit = queryParams['allowEdit'] == 'true' ? true : false
     )
   }
 
