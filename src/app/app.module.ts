@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing';
+
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -22,6 +23,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { LoginService } from './services/login.service';
 import { ServerResolver } from './services/server-resolve.service';
 import { ServerService } from './services/server.service';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -38,12 +40,14 @@ import { ServerService } from './services/server.service';
     ActiveUserComponent,
     InactiveUserComponent,
     HomeComponent,
-    EditServerComponent
+    EditServerComponent,
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [ AuthGuardService, LoginService, ServerResolver, ServerService ],
   bootstrap: [AppComponent]

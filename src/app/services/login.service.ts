@@ -1,6 +1,6 @@
 export class LoginService{
   loggedIn:boolean = false;
-
+// fake async call to server for validating user authentication
   isLoggedIn(){
     const promise = new Promise(
       (resolve, reject) => {

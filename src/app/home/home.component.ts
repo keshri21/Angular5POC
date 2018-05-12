@@ -9,6 +9,8 @@ import { LoginService } from '../services/login.service';
 })
 export class HomeComponent implements OnInit {
 title: string = 'Angular 5 POC';
+isLoggedIn: boolean = false;
+signup: boolean = false;
   constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
@@ -20,10 +22,16 @@ title: string = 'Angular 5 POC';
 
   onLogin(){
     this.loginService.logIn();
+    this.isLoggedIn = true;
+  }
+
+  onSignUp(){
+      this.signup = true;
   }
 
   onLogout(){
     this.loginService.logOut();
+    this.isLoggedIn = false;
   }
 
 }
